@@ -29,9 +29,50 @@
 
   <style>
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: 'Inter', sans-serif;
       background-color: #f8f9fa;
       color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navbar placeholder for demo */
+    .navbar-placeholder {
+      background-color: #007b5e;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    .container {
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .py-5 {
+      padding-top: 3rem !important;
+      padding-bottom: 3rem !important;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -15px;
+      margin-left: -15px;
+    }
+
+    .justify-content-center {
+      justify-content: center !important;
+    }
+
+    .col-md-8 {
+      position: relative;
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
     }
 
     .card {
@@ -39,14 +80,31 @@
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
       overflow: hidden;
+      margin-bottom: 20px;
     }
 
     .card-header {
-      background-color: #007b5e;
+      background-color: #28a745;
       color: white;
       text-align: center;
-      font-size: 1.5rem;
-      font-weight: bold;
+      padding: 20px;
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .text-center {
+      text-align: center !important;
+    }
+
+    .text-left {
+      text-align: left !important;
+    }
+
+    .py-4 {
+      padding-top: 1.5rem !important;
+      padding-bottom: 1.5rem !important;
     }
 
     .icon-check-circle {
@@ -54,9 +112,22 @@
       color: #28a745;
     }
 
+    h2 {
+      margin-bottom: 0;
+      font-size: 1.8rem;
+    }
+
     h3 {
       font-weight: 600;
       color: #004085;
+      font-size: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
     }
 
     .lead {
@@ -74,6 +145,7 @@
 
     ol {
       padding-left: 20px;
+      margin-bottom: 20px;
     }
 
     ol li {
@@ -90,13 +162,144 @@
       font-weight: bold;
       border-radius: 5px;
       transition: 0.3s;
+      color: white;
+      text-decoration: none;
+      display: inline-block;
     }
 
     .btn-primary:hover {
       background-color: rgb(1, 27, 54);
       border-color: #003366;
     }
-  </style>
+
+    .mt-3 {
+      margin-top: 1rem !important;
+    }
+
+    .mt-4 {
+      margin-top: 1.5rem !important;
+    }
+
+    .mt-5 {
+      margin-top: 3rem !important;
+    }
+
+    .mb-0 {
+      margin-bottom: 0 !important;
+    }
+
+    /* Footer placeholder for demo */
+    .footer-placeholder {
+      background-color: #333;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    /* Responsive styles */
+    @media (min-width: 576px) {
+      .container {
+        max-width: 540px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        max-width: 720px;
+      }
+      .col-md-8 {
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .container {
+        max-width: 960px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .container {
+        max-width: 1140px;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      h2 {
+        font-size: 1.5rem;
+      }
+      h3 {
+        font-size: 1.3rem;
+      }
+      .lead {
+        font-size: 1.1rem;
+      }
+      ol li {
+        font-size: 1rem;
+      }
+      .icon-check-circle {
+        font-size: 48px;
+      }
+      .card-header {
+        padding: 15px;
+      }
+      .card-body {
+        padding: 15px;
+      }
+    }
+
+    /* PreLoader */
+    #overlayer {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      z-index: 1;
+      background: #fff;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    .loader {
+      z-index: 2;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .spinner-border {
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      vertical-align: text-bottom;
+      border: 0.25em solid currentColor;
+      border-right-color: transparent;
+      border-radius: 50%;
+      animation: spinner-border .75s linear infinite;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @keyframes spinner-border {
+      to { transform: rotate(360deg); }
+    }
 </head>
 <body>
 
